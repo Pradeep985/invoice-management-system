@@ -11,7 +11,6 @@ const app = express();
 
 app.use(cors({
   origin: "https://invoice-management-system-sfw1.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 app.use(express.json());
