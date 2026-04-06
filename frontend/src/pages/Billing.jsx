@@ -31,8 +31,8 @@ export default function Billing() {
     const fetchData = async () => {
       try {
         const [custRes, itemRes] = await Promise.all([
-          fetch('${process.env.REACT_APP_API_URL}/api/customers'),
-          fetch('${process.env.REACT_APP_API_URL}/api/items')
+          fetch(`${process.env.REACT_APP_API_URL}/api/customers`),
+          fetch(`${process.env.REACT_APP_API_URL}/api/items`)
         ]);
 
         const customers = await custRes.json();
@@ -103,7 +103,7 @@ export default function Billing() {
     };
 
     try {
-      const response = await fetch("${process.env.REACT_APP_API_URL}/api/invoices", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/invoices`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
