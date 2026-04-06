@@ -32,6 +32,7 @@ const Customers = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
+        console.log("Current API URL being used:", process.env.REACT_APP_API_URL);
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/customers`);
         if (response.ok) {
           const data = await response.json();
