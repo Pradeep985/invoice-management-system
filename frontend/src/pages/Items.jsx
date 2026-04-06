@@ -27,7 +27,7 @@ const Items = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch("${process.env.REACT_APP_API_URL}/api/items");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/items`);
         if (response.ok) {
           const data = await response.json();
           setItemList(data);
