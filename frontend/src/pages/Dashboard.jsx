@@ -20,7 +20,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/invoices");
+        const res = await fetch("${process.env.REACT_APP_API_URL}/api/invoices");
         if (res.ok) {
           const data = await res.json();
           setInvoices(data);
