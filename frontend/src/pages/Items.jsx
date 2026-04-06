@@ -27,7 +27,7 @@ const Items = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/items");
+        const response = await fetch("${process.env.REACT_APP_API_URL}/api/items");
         if (response.ok) {
           const data = await response.json();
           setItemList(data);
@@ -68,7 +68,7 @@ const Items = () => {
         is_active: formData.status === "Active"
       };
 
-      const response = await fetch("http://localhost:5000/api/items", {
+      const response = await fetch("${process.env.REACT_APP_API_URL}/api/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
