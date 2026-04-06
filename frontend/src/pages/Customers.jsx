@@ -32,7 +32,7 @@ const Customers = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await fetch('${process.env.REACT_APP_API_URL}/api/customers');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/customers`);
         if (response.ok) {
           const data = await response.json();
           setCustomerList(data);
@@ -96,7 +96,7 @@ const Customers = () => {
         is_active: formData.status === "Active"
       };
 
-      const response = await fetch('${process.env.REACT_APP_API_URL}/api/customers', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/customers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
