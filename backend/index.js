@@ -9,7 +9,10 @@ const invoiceRoutes = require('./routes/invoiceRoutes');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://invoice-management-system.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 
 app.use('/api/customers', customerRoutes);
